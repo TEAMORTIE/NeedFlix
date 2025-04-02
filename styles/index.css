@@ -1,0 +1,12 @@
+:root[theme="light"] {
+  --background: "rgba(249, 240, 230, 1)";
+  --principal: "rgba(255, 149, 0, 1)";
+  --secondaire: "rgba(18, 18, 17, 1)";
+  --text: "rgba(18, 18, 17, 1)";
+}
+:root[theme="dark"] {
+  --background: "rgba(18, 18, 17, 1)";
+  --principal: "rgba(255, 149, 0, 1)";
+  --secondaire: "rgba(249, 240, 230, 1)";
+  --text: "rgba(249, 240, 230, 1)";
+}
