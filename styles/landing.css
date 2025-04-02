@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&family=Paytone+One&display=swap");
+
+:root {
+  --background: rgba(18, 18, 17, 1);
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(249, 240, 230, 1);
+  --text: rgba(249, 240, 230, 1);
+}
+:root[theme="dark"] {
+  --background: rgba(249, 240, 230, 1);
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(18, 18, 17, 1);
+  --text: rgba(18, 18, 17, 1);
+}
+/* section hero */
+body {
+  background-color: var(--background);
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+}
+.titre {
+  font-family: "Paytone One", sans-serif;
+  font-weight: 400;
+  color: var(--text);
+}
+.text {
+  font-family: "Kameron", serif;
+}
+.logo {
+  position: absolute;
+  margin-top: 20px;
+  width: 100%;
+  height: 100px;
+  background-size: contain;
+  z-index: 2;
+  background-position: center;
+}
+.cta {
+  cursor: pointer;
+  font-family: "Kameron", serif;
+  position: absolute;
+  z-index: 2;
+  top: 65%;
+  padding: 0.8em 2.5em;
+  left: 50%;
+  font-size: 22px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: var(--principal);
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+}
+h1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  text-align: center;
+  font-size: 36px;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+}
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+  z-index: 1;
+}
+header {
+  width: 100%;
+  height: 100vh;
+}
+/* section adulte */
+
+.film {
+  margin-top: 50px;
+  height: 150vh;
+}
+h2 {
+  font-size: 28px;
+  width: 100%;
+  background-color: var(--principal);
+  width: 500px;
+  text-align: center;
+  margin: auto;
+  font-size: 36px;
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.paragraphe {
+  line-height: 1.5em;
+  z-index: 2;
+  margin-left: 2em;
+  width: 60%;
+  position: relative;
+
+  margin-top: 3em;
+  font-size: 34px;
+}
+.paragraphe2 {
+  line-height: 1.5em;
+  z-index: 2;
+  margin-left: auto;
+  margin-right: 2em;
+  width: 60%;
+
+  position: relative;
+
+  margin-top: 3em;
+  font-size: 34px;
+}
+.principal {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.filmgrand {
+  width: 100%;
+  object-fit: cover;
+}
+.filmpetit {
+  width: 100%;
+  object-fit: cover;
+}
+.image-film {
+  width: 600px;
+  height: 800px;
+  overflow: hidden;
+  z-index: 1;
+  top: -10%;
+  right: 0;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+}
+.image-film2 {
+  overflow: hidden;
+  z-index: 1;
+  top: -10%;
+  left: 0;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+}
+
+.image-film2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(18, 18, 17, 1),
+    rgba(18, 18, 17, 0.9),
+    rgba(18, 18, 17, 0.5)
+  );
+  pointer-events: none; /* Permet aux interactions de passer à travers */
+}
+.image-film::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(18, 18, 17, 1),
+    rgba(18, 18, 17, 0.8),
+    rgba(18, 18, 17, 0.5)
+  );
+  pointer-events: none; /* Permet aux interactions de passer à travers */
+}
+.div1 {
+  width: 300px;
+  height: 400px;
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+}
+.div2 {
+  width: 300px;
+  height: 400px;
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+}
+.div3 {
+  width: 300px;
+  height: 400px;
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+.div4 {
+  width: 150px;
+  height: 200px;
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+.div5 {
+  width: 150px;
+  height: 200px;
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+.div6 {
+  width: 150px;
+  height: 200px;
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+.div7 {
+  width: 150px;
+  height: 200px;
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+strong {
+  background-color: var(--principal);
+  border-radius: 5px;
+  padding: 2px;
+}
+/* FIN */
+
+H3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Kameron", sans-serif;
+  font-size: 36px;
+  color: var(--text);
+}
+.bouton {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.inscription {
+  font-family: "Kameron", sans-serif;
+  font-size: 18px;
+  color: var(--text);
+  background-color: var(--principal);
+  cursor: pointer;
+  padding: 1em 2em;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+}
+.connexion {
+  border-radius: 5px;
+  border: none;
+  font-family: "Kameron", sans-serif;
+  font-size: 18px;
+  color: var(--text);
+  background-color: var(--principal);
+  cursor: pointer;
+  padding: 1em 2em;
+  text-align: center;
+}
+.connexion:hover {
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border: 1px white solid;
+}
+
+.inscription:hover {
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border: 1px white solid;
+}
