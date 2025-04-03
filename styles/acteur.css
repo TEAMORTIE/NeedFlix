@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&family=Paytone+One&display=swap");
+
+:root[theme="light"] {
+  --background: rgba(249, 240, 230, 1);
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(18, 18, 17, 1);
+  --text: rgba(18, 18, 17, 1);
+}
+
+:root {
+  --background: rgba(18, 18, 17, 1);
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(249, 240, 230, 1);
+  --text: rgba(249, 240, 230, 1);
+}
+
+/* section hero */
+body {
+  background-color: var(--background);
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+* {
+  font-family: "Kameron", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+}
+h1 {
+  font-size: 34px;
+  margin-left: 1em;
+  font-family: "paytone One", sans-serif;
+  margin-bottom: 20px;
+}
+.actor-name {
+  margin-top: 10px;
+  text-transform: uppercase;
+  padding: 1em;
+  border-left: 1px solid var(--text);
+}
+.actor img {
+  object-fit: cover;
+  height: 80%;
+  width: 100%;
+}
+#actors-container {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.actor {
+  display: inline-block;
+  width: 320px;
+  margin: 10px;
+  text-align: center;
+}
+#next-button {
+  display: block;
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+  background-color: var(--principal);
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+#precedent-button {
+  display: block;
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+  background-color: var(--principal);
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+#fleche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#page {
+  background-color: var(--principal);
+  border-radius: 50em;
+  width: 30px;
+  height: 30px;
+  color: black;
+  text-align: center;
+  align-content: center;
+  font-weight: 900;
+}

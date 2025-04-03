@@ -3,22 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NeedFlix - Home</title>
-    <link href="../styles/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/acteur.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
     <link
       rel="shortcut icon"
       href="/images/logo-icon.svg"
       type="image/x-icon"
     />
-    <script
-      src="https://kit.fontawesome.com/28c3dd4fc8.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>Acteurs Populaires</title>
   </head>
   <body>
     <nav class="navbar">
       <div class="div-logo-nav">
-        <a href="#">
+        <a href="homepage.html">
           <?xml version="1.0" standalone="no"?>
           <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
           <svg
@@ -128,14 +125,20 @@ c-61 0 -77 -3 -72 -12z"
         <a href="#"
           ><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i
         ></a>
-        <a href="#">Les films</a>
+        <a href="homepage.html">Les films</a>
         <a href="#">Les séries</a>
-        <a href="#">Les acteurs</a>
+        <a href="acteur.html">Les acteurs</a>
         <a href="#">NeedList</a>
       </div>
     </nav>
-
+    <h1>Acteurs Populaires</h1>
+    <div id="actors-container"></div>
+    <div id="fleche">
+      <button id="precedent-button"><</button>
+      <div id="page"></div>
+      <button id="next-button">></button>
+    </div>
+    <script src="/scripts/acteur.js"></script>
     <script src="../scripts/navbar.js"></script>
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
