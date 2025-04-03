@@ -13,7 +13,17 @@
   --secondaire: rgba(249, 240, 230, 1);
   --text: rgba(249, 240, 230, 1);
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: var(--principal);
+  border-radius: 10px;
+}
 /* section hero */
 body {
   background-color: var(--background);
@@ -49,6 +59,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  cursor: pointer;
 }
 .actor {
   display: inline-block;
@@ -58,7 +69,7 @@ h1 {
 }
 #next-button {
   display: block;
-  padding: 10px 20px;
+  padding: 7px 15px;
   font-size: 26px;
   cursor: pointer;
   background-color: var(--principal);
@@ -69,7 +80,7 @@ h1 {
 
 #precedent-button {
   display: block;
-  padding: 10px 20px;
+  padding: 7px 15px;
   font-size: 26px;
   cursor: pointer;
   background-color: var(--principal);
@@ -82,6 +93,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  color: var(--background);
 }
 #page {
   background-color: var(--principal);
@@ -92,4 +104,149 @@ h1 {
   text-align: center;
   align-content: center;
   font-weight: 900;
+}
+.image_actor {
+  width: 30%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.main1 {
+  display: flex;
+  margin: 2em;
+}
+.infoactor {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid var(--text);
+  display: flex;
+  flex-direction: column;
+}
+.nameactor {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.connu {
+  font-size: 24px !important;
+  margin-top: 20px;
+}
+.bio {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.infoh3 {
+  font-family: "kameron";
+  font-size: 32px;
+}
+.infoperso {
+  margin-left: 3em;
+  margin-top: 2em;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.infoperso p {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 60px;
+}
+.infoperso span {
+  font-weight: 400;
+}
+.alias {
+  font-weight: 400;
+  line-height: 1.5em;
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+.perso {
+  display: flex;
+  gap: 0px;
+}
+.filmdiv {
+  display: flex;
+  gap: 30px;
+}
+.film {
+  width: 60%;
+}
+.filmdiv {
+  width: 60vw;
+  overflow-x: scroll;
+}
+.film2 {
+  width: 100%;
+}
+.film2 img {
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+}
+.film2 p {
+  font-size: 18px;
+}
+.celebre {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+}
+fa-arrow-right .fa-arrow-left {
+  color: var(--principal);
+  border-radius: 50em;
+  width: 50px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.retour {
+  cursor: pointer;
+  color: var(--principal) !important;
+  border-radius: 50em;
+  width: 50px;
+  margin-left: 1em;
+  font-size: 40px;
+}
+.black {
+  color: black;
+  padding: 0;
+}
+@media screen and (max-width: 426px) {
+  .main1 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image_actor {
+    width: 100%;
+    height: auto;
+  }
+  .perso {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .infoperso {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .infoh3 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .film {
+    width: 100%;
+  }
+  .celebre {
+    margin-left: 1em;
+  }
+  .filmdiv {
+    padding-left: 1em;
+    width: 100%;
+    overflow-x: scroll;
+  }
 }
