@@ -16,6 +16,7 @@
 
 * {
   box-sizing: border-box;
+  color: var(--text);
 }
 
 body {
@@ -27,16 +28,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 30px;
+  padding: 20px 30px;
   background-color: var(--background);
-  position: fixed;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  max-width: 100%;
+  margin: auto;
   font-family: "Paytone One";
 }
-
 
 .div-logo-nav {
   height: auto;
