@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/connexion.css" />
+    <link rel="stylesheet" href="/styles/inscription.css" />
     <link
       rel="shortcut icon"
       href="/images/logo-icon.svg"
@@ -111,11 +111,8 @@ c-61 0 -77 -3 -72 -12z"
       </svg>
     </header>
     <div class="container-connexion">
-      <div class="image-connexion">
-        <img src="/images/connexion-image.jpg" alt="" />
-      </div>
       <div class="form-connexion">
-        <h2>Connectez vous</h2>
+        <h2>Créer un compte</h2>
         <form action="">
           <label for="email">Email</label>
           <input class="input" name="email" type="text" />
@@ -125,25 +122,19 @@ c-61 0 -77 -3 -72 -12z"
             <input class="checkbox" name="connecte" type="checkbox" />
             <label for="connecte">Resté connecté</label>
           </div>
-          <p
-            style="color: red; font-size: 15px; margin-top: -10px"
-            id="message"
-          ></p>
-          <input class="submit" value="SE CONNECTER" type="submit" />
+          <input class="submit" value="S'INSCRIRE" type="submit" />
           <div class="info">
             <p>
-              Pas de compte ? <a href="inscription.html">Inscrivez vous !</a>
+              Déjà un compte ? <a href="connexion.html">Connectez vous !</a>
             </p>
           </div>
         </form>
       </div>
+      <div class="image-connexion">
+        <img src="/images/inscription.jpg" alt="" />
+      </div>
     </div>
     <script>
-      let email = "admin@gmail.com";
-      let password = "admin123";
-      let message;
-      let cookies;
-      let token = "8668548";
       if (localStorage.length > 0) {
         cookies = localStorage.getItem("cookie");
         if (cookies.length > 0) {
@@ -152,24 +143,6 @@ c-61 0 -77 -3 -72 -12z"
           localStorage.clear();
         }
       }
-
-      document
-        .querySelector(".form-connexion")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          let inputEmail = document.querySelector("input[name='email']").value;
-          let inputPassword = document.querySelector(
-            "input[name='password']"
-          ).value;
-          if (inputEmail === email && inputPassword === password) {
-            window.location.href = "homepage.html";
-            cookies = token + Math.floor(Math.random(999 + 1));
-            localStorage.setItem("cookie", cookies);
-          } else {
-            message = "Email ou mot de passe incorrect";
-            document.getElementById("message").innerHTML = message;
-          }
-        });
     </script>
   </body>
 </html>
