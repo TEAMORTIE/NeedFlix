@@ -79,6 +79,7 @@ h2 {
   flex-direction: column;
 }
 .input {
+  font-size: 24px;
   margin-bottom: 20px;
   background-color: black;
   height: 60px;
