@@ -82,7 +82,7 @@ header {
 
 .film {
   margin-top: 50px;
-  height: 150vh;
+  height: 140vh;
 }
 h2 {
   font-size: 28px;
@@ -150,7 +150,7 @@ h2 {
 .image-film2 {
   overflow: hidden;
   z-index: 1;
-  top: -10%;
+  top: 0%;
   left: 0;
   position: absolute;
   display: grid;
@@ -287,4 +287,86 @@ H3 {
   background-color: rgba(0, 0, 0, 1);
   color: white;
   border: 1px white solid;
+}
+/* responsive */
+
+.enfant {
+  margin-top: -50px;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 1025px) {
+  .paragraphe {
+    font-size: 30px;
+  }
+  .paragraphe2 {
+    font-size: 30px;
+  }
+  h3 {
+    margin-top: 100px;
+  }
+  .bouton {
+    margin-bottom: 100px;
+  }
+  .enfant {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-film {
+    display: none;
+  }
+  .image-film2 {
+    display: none;
+  }
+  .paragraphe {
+    margin-top: 50px !important;
+    text-align: center;
+    width: 98%;
+    margin: 0;
+    margin-left: 1%;
+  }
+  .paragraphe2 {
+    margin-top: 50px !important;
+    text-align: center;
+    width: 98%;
+    margin: 0;
+    margin-left: 1%;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h3 {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 24px;
+    width: 350px;
+  }
+  .paragraphe {
+    font-size: 24px;
+  }
+  .paragraphe2 {
+    font-size: 24px;
+  }
+  .film {
+    height: 130vh;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 20px;
+    width: 300px;
+  }
+  .bouton {
+    display: flex;
+    flex-direction: column;
+  }
+  .film {
+    height: 180vh;
+  }
 }
