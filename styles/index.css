@@ -22,6 +22,7 @@ p {
 }
 body {
   background-color: var(--background);
+  box-sizing: border-box;
 }
 
 .navbar {
@@ -30,8 +31,7 @@ body {
   align-items: center;
   padding: 30px 30px;
   background-color: var(--background);
-  position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
