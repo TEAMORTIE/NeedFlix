@@ -50,8 +50,8 @@ function displayResults(movies) {
       ? `${IMAGE_BASE_URL}${movie.poster_path}`
       : "https://placehold.co/400";
     movieElement.innerHTML = `
-      <img src="${movieImage}" alt="${movie.title}" />
-      <div class="movie-info">
+      <img src="${movieImage}" alt="${movie.title}" onclick="window.location.href='film.html?id=${movie.id}'" style="cursor: pointer;"/>
+      <div class="movie-info"  >
       <h3>${movie.title}</h3>
       <div class="movie-rating">
     <p>${movie.release_date}</p>
