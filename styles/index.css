@@ -16,6 +16,7 @@
 
 * {
   box-sizing: border-box;
+  color: var(--text);
 }
 p {
   font-family: "kameron", sans-serif;
@@ -25,17 +26,16 @@ body {
   box-sizing: border-box;
 }
 
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 30px;
+  padding: 20px 30px;
   background-color: var(--background);
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  font-family: "kameron", sans-serif;
+  max-width: 100%;
+  margin: auto;
+  font-family: "Paytone One";
 }
 
 .div-logo-nav {
