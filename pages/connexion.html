@@ -142,15 +142,10 @@ c-61 0 -77 -3 -72 -12z"
       let email = "admin@gmail.com";
       let password = "admin123";
       let message;
-      let cookies;
+      let cookies = localStorage.getItem("cookie") || "";
       let token = "8668548";
-      if (localStorage.length > 0) {
-        cookies = localStorage.getItem("cookie");
-        if (cookies.length > 0) {
-          window.location.href = "homepage.html";
-        } else {
-          localStorage.clear();
-        }
+      if (cookies.includes(token)) {
+        window.location.href = "homepage.html";
       }
 
       document
