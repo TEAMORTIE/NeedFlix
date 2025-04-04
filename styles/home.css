@@ -1,274 +1,312 @@
 @import url("https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&family=Paytone+One&display=swap");
 
 :root {
-    --background: rgba(18, 18, 17, 1);
-    --principal: rgba(255, 149, 0, 1);
-    --secondaire: rgba(249, 240, 230, 1);
-    --text: rgba(249, 240, 230, 1);
+  --background: rgba(18, 18, 17, 1);
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(249, 240, 230, 1);
+  --text: rgba(249, 240, 230, 1);
 }
 
 main {
-    padding: 20px;
+  padding: 20px;
 }
-
+h2 {
+  margin-top: 3em;
+  padding-bottom: 0.2em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--principal);
+}
 /* Conteneur du slider */
 .slider-container {
-    width: 100%;
-    height: 80vh; /* Réduction de la hauteur */
-    max-height: 600px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 15px;
-    position: relative;
+  width: 100%;
+  height: 80vh; /* Réduction de la hauteur */
+  max-height: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
 }
 
 /* Style des slides */
 .swiper-slide {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Dimensions du slider */
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Affichage des images */
 .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Titre des films */
 .movie-title {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: black;
-    font-size: 45px;
-    font-weight: bold;
-    margin: 30px 0 0 30px;
-    font-family: "Kameron", sans-serif;
+  position: absolute;
+  top: 20px;
+  left: 400px;
+  color: var(--text);
+  font-size: 45px;
+  font-weight: bold;
+  margin: 30px 0 0 30px;
+  font-family: "Kameron", sans-serif;
 }
 
 /* Description des films */
 .movie-description {
-    position: absolute;
-    bottom: 35px;
-    left: 10px;
-    background: rgba(255, 255, 255, 0.55);
-    color: black;
-    padding: 8px 12px;
-    font-size: 24px;
-    max-width: 45%;
-    border-radius: 5px;
-    font-family: "Kameron", sans-serif;
+  position: absolute;
+  top: 25%;
+  left: 420px;
+  color: var(--text);
+  padding: 8px 12px;
+  font-size: 24px;
+  max-width: 45%;
+  border-radius: 5px;
+  font-family: "Kameron", sans-serif;
 }
 
 /* Bouton Bande-annonce */
 .BO-button {
-    position: absolute;
-    bottom: 35px;
-    right: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    background: var(--principal);
-    padding: 5px 15px;
+  position: absolute;
+  bottom: 55px;
+  left: 430px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  background: var(--principal);
+  padding: 5px 15px;
 }
 
-.BO-button a, p {
-    color: black;
-    font-family: "Kameron", sans-serif;
-    font-weight: bold;
+.BO-button a,
+p {
+  color: black;
+  font-family: "Kameron", sans-serif;
+  font-weight: bold;
 }
 
 /* Pagination et navigation du swiper */
 .swiper-button-prev,
 .swiper-button-next {
-    color: var(--principal);
-    font-size: 30px;
+  color: var(--principal);
+  font-size: 30px;
 }
 .slider-container-now-playing,
 .slider-container-top-rated,
 .slider-container-popular,
-.slider-container-upcoming{
-    width: 90%;
-    margin: 50px auto;
-    position: relative;
-    height: 430px;
+.slider-container-upcoming {
+  width: 90%;
+  margin: 50px auto;
+  position: relative;
+  height: 430px;
 }
 .slider-title {
-    font-size: 32px;
-    color: var(--text);
-    margin-bottom: 15px;
-    text-align: left;
+  font-size: 32px;
+  color: var(--text);
+  text-align: left;
 }
 .swiper-now-playing,
-.swiper-top-rated ,
+.swiper-top-rated,
 .swiper-popular,
-.swiper-upcoming{
-    width: 100%;
-    overflow: hidden;
-    cursor: pointer;
+.swiper-upcoming {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
 }
 .movie-date {
-    font-size: 14px;
-    opacity: 0.8;
-    color: var(--text);
-    font-family: "Kameron", sans-serif;
+  font-size: 14px;
+  opacity: 0.8;
+  color: var(--text);
+  font-family: "Kameron", sans-serif;
 }
 .right-info {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: left;
-    font-family: "Kameron", sans-serif;
-    color: var(--text);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  font-family: "Kameron", sans-serif;
+  color: var(--text);
 }
-.movie-rating{
-    color: var(--text);
+.movie-rating {
+  color: var(--text);
 }
 .swiper-now-playing .swiper-slide,
 .swiper-top-rated .swiper-slide,
 .swiper-popular .swiper-slide,
 .swiper-upcoming .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .swiper-now-playing img,
 .swiper-top-rated img,
 .swiper-popular img,
-.swiper-upcoming img{
-    width: 100%;
-    max-width: 200px;
-    border-radius: 10px;
+.swiper-upcoming img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
 }
 .left-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 .movie-title-now {
-    font-size: 15px;
-    color: var(--text);
-    font-family: "Kameron", sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  font-family: "Kameron", sans-serif;
 }
 .movie-info {
-    display: flex;
-    justify-content: space-between; /* Titre + date à gauche, note à droite */
-    align-items: flex-end;
-    width: 90%;
-    padding: 8px;
-    color: var(--text);
-    font-size: 14px;
-    border-radius: 5px;
-    font-family: "Kameron", sans-serif;
+  display: flex;
+  justify-content: space-between; /* Titre + date à gauche, note à droite */
+  align-items: flex-end;
+  width: 90%;
+  padding: 8px;
+  color: var(--text);
+  font-size: 14px;
+  border-radius: 5px;
+  font-family: "Kameron", sans-serif;
 }
-.redirect-bottom{
-    display: flex;
-    color: var(--text);
-    flex-direction: column;
-    text-align: center;
-    padding-top: 40px;
+.redirect-bottom {
+  display: flex;
+  color: var(--text);
+  flex-direction: column;
+  text-align: center;
+  padding-top: 40px;
 }
-.redirect-bottom p, a {
-    font-family: "Paytone One", sans-serif;
-    color: var(--text);
-    text-decoration: none;
+.redirect-bottom p,
+a {
+  font-family: "Paytone One", sans-serif;
+  color: var(--text);
+  text-decoration: none;
 }
 .redirect-bottom a {
-    background-color: var(--principal);
-    padding: 6px 12px;
-    border-radius: 5px;
-    color: black;
-    width: fit-content;
-    margin: auto;
-    font-size: 24px;
+  background-color: var(--principal);
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: black;
+  width: fit-content;
+  margin: auto;
+  font-size: 24px;
 }
 .redirect-bottom p {
-    font-size: 32px;
+  font-size: 32px;
+}
 
+.swiper-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.fond {
+  filter: brightness(0.4) blur(5px);
+}
+.movie-image {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  margin-left: 5em;
+}
+.movie-image img {
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  width: 300px;
+  z-index: 100000;
+}
+.highrated {
+  color: green;
+}
+.lowrated {
+  color: red;
+}
+.mediumrated {
+  color: var(--principal);
 }
 /* ✅ Afficher les sliders sur mobile */
 @media (max-width: 767px) {
-    .slider-container-now-playing,
-    .slider-container-top-rated,
-    .slider-container-popular,
-    .slider-container-upcoming{
-        display: block; /* Les rendre visibles */
-        width: 95%; /* Éviter que ça colle aux bords */
-        height: auto; /* Adapter à la taille du contenu */
-        margin: 30px auto;
-    }
-    .hero-slider{
-        display: none;
-    }
-    /* ✅ Ajustement de la hauteur des slides */
-    .swiper-slide {
-        height: auto; /* Adapter la hauteur dynamiquement */
-    }
+  .slider-container-now-playing,
+  .slider-container-top-rated,
+  .slider-container-popular,
+  .slider-container-upcoming {
+    display: block; /* Les rendre visibles */
+    width: 95%; /* Éviter que ça colle aux bords */
+    height: auto; /* Adapter à la taille du contenu */
+    margin: 30px auto;
+  }
+  .hero-slider {
+    display: none;
+  }
+  /* ✅ Ajustement de la hauteur des slides */
+  .swiper-slide {
+    height: auto; /* Adapter la hauteur dynamiquement */
+  }
 
-    /* ✅ Adapter la taille des images */
-    .swiper-now-playing img,
-    .swiper-top-rated img,
-    .swiper-popular img,
-    .swiper-updated img{
-        width: 90%; /* Réduire pour éviter les débordements */
-        max-width: 160px;
-        border-radius: 8px;
-    }
+  /* ✅ Adapter la taille des images */
+  .swiper-now-playing img,
+  .swiper-top-rated img,
+  .swiper-popular img,
+  .swiper-updated img {
+    width: 90%; /* Réduire pour éviter les débordements */
+    max-width: 160px;
+    border-radius: 8px;
+  }
 
-    /* ✅ Réduction des titres */
-    .slider-title {
-        font-size: 20px; /* Moins grand sur mobile */
-        text-align: center;
-        margin-bottom: 10px;
-    }
+  /* ✅ Réduction des titres */
+  .slider-title {
+    font-size: 20px; /* Moins grand sur mobile */
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-    /* ✅ Réduire la taille des textes des films */
-    .movie-title-now {
-        font-size: 13px;
-        text-align: center;
-    }
+  /* ✅ Réduire la taille des textes des films */
+  .movie-title-now {
+    font-size: 13px;
+    text-align: center;
+  }
 
-    .movie-date,
-    .movie-rating {
-        font-size: 12px;
-    }
+  .movie-date,
+  .movie-rating {
+    font-size: 12px;
+  }
 
-    /* ✅ Centrer les infos des films */
-    .movie-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  /* ✅ Centrer les infos des films */
+  .movie-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .left-info {
-        text-align: center;
-    }
+  .left-info {
+    text-align: center;
+  }
 
-    /* ✅ Ajustement des boutons Swiper */
-    .swiper-button-prev,
-    .swiper-button-next {
-        display: none;
-    }
+  /* ✅ Ajustement des boutons Swiper */
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 
-    /* ✅ Espacement pour éviter le chevauchement */
-    .swiper-pagination {
-        bottom: 5px; /* Remonter un peu */
-    }
+  /* ✅ Espacement pour éviter le chevauchement */
+  .swiper-pagination {
+    bottom: 5px; /* Remonter un peu */
+  }
 
-    /* ✅ Espacement entre les slides */
-    .swiper-wrapper {
-        justify-content: center;
-    }
+  /* ✅ Espacement entre les slides */
+  .swiper-wrapper {
+    justify-content: center;
+  }
 }
