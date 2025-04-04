@@ -7,14 +7,12 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original"; // URL des affiche
  * @returns {Promise<Array>} - Liste des films populaires (max 10).
  */
 async function fetchPopularMovies() {
-    console.log("📡 Récupération des films populaires...");
     try {
         const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=fr-FR&page=1`);
 
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
-        console.log("🎥 Films récupérés :", data.results);
 
         return data.results ? data.results.slice(0, 10) : [];
     } catch (error) {
@@ -44,7 +42,6 @@ async function displayMoviesInSwiper() {
     }
 
     movies.forEach((movie, index) => {
-        console.log(`📌 Ajout du film ${index + 1}: ${movie.title}`);
 
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
@@ -57,17 +54,15 @@ async function displayMoviesInSwiper() {
             <img src="${imageUrl}" alt="${movie.title}">
             <div class="movie-title">${movie.title}</div>
             <div class="movie-description">${description}</div>
-            <a class="BO-button" href=""><i class="fa-solid fa-play"></i><p>Bande-Annonce</p></a>
+            <a class="BO-button" href=""><i class="fa-solid fa-play" style="color: black"></i><p>Bande-Annonce</p></a>
         `;
 
         swiperWrapper.appendChild(slide);
     });
 
-    console.log("✅ Films injectés dans le Swiper.");
 
     // Initialiser Swiper après avoir ajouté les films
     setTimeout(() => {
-        console.log("🎢 Initialisation du Swiper...");
         new Swiper(".swiper-big", {
             loop: true,
             autoplay: {
@@ -83,24 +78,24 @@ async function displayMoviesInSwiper() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+            slidesPerView: 1, // ✅ Affiche uniquement une slide à la fois
+            spaceBetween: 10, // ✅ Espacement entre les slides
         });
-        console.log("🎯 Swiper prêt !");
     }, 100);
+
 }
 
 // 🏁 Exécuter tout le script après le chargement du DOM
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log("📜 DOM chargé, lancement du script...");
 
     // 1️⃣ Récupérer et afficher les films
     await displayMoviesInSwiper();
 
     // 2️⃣ Appliquer les styles aux boutons Swiper
-    const prevButton = document.querySelector(".swiper-button-prev");
-    const nextButton = document.querySelector(".swiper-button-next");
+    const prevButton = document.querySelector(".swiper-button-prev-now");
+    const nextButton = document.querySelector(".swiper-button-next-now");
 
     if (prevButton && nextButton) {
-        console.log("🎨 Personnalisation des boutons Swiper...");
         prevButton.style.fontWeight = "bolder";
         prevButton.style.color = "rgba(255, 149, 0, 1)";
 
@@ -108,5 +103,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         nextButton.style.color = "rgba(255, 149, 0, 1)";
     }
 
-    console.log("✅ Script terminé !");
 });

@@ -1,31 +1,9 @@
-
 /**
- * 🔄 Fonction pour récupérer les films depuis TMDB.
- * @param {string} category - Catégorie de films ("popular", "now_playing").
- * @param {number} limit - Nombre max de films à récupérer.
- * @returns {Promise<Array>} - Liste des films récupérés.
+ * 🎬 Génère un slider Swiper pour les films les mieux notés.
  */
-async function fetchMovies(category, limit = 10) {
-
-    try {
-        const response = await fetch(`${BASE_URL}/movie/${category}?api_key=${API_KEY}&language=fr-FR&page=1`);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
-        const data = await response.json();
-
-        return data.results ? data.results.slice(0, limit) : [];
-    } catch (error) {
-        console.error(`❌ Erreur lors de la récupération des films (${category}) :`, error);
-        return [];
-    }
-}
-
-/**
- * 🎬 Génère un slider Swiper avec les films récupérés.
- * @param {string} category - Catégorie des films.
- * @param {string} swiperSelector - Sélecteur CSS du slider.
- */
-async function createMovieSlider(category, swiperSelector) {
+async function createTopRatedMovieSlider() {
+    const category = "top_rated"; // Catégorie TMDB
+    const swiperSelector = ".swiper-top-rated"; // Sélecteur du slider
 
     const movies = await fetchMovies(category, 10);
     const swiperWrapper = document.querySelector(`${swiperSelector} .swiper-wrapper`);
@@ -43,8 +21,7 @@ async function createMovieSlider(category, swiperSelector) {
         return;
     }
 
-    movies.forEach((movie, index) => {
-
+    movies.forEach((movie) => {
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
 
@@ -56,7 +33,7 @@ async function createMovieSlider(category, swiperSelector) {
         slide.innerHTML = `
             <img src="${imageUrl}" alt="${title}">
             <div class="movie-info">
-                <div class="left-info">
+                <div class="left-info-rated">
                     <p class="movie-title-now">${title}</p>
                     <p class="movie-date">${releaseDate}</p>
                 </div>
@@ -69,16 +46,15 @@ async function createMovieSlider(category, swiperSelector) {
         swiperWrapper.appendChild(slide);
     });
 
-
-    // Initialisation du Swiper après injection
+    // Initialisation du Swiper pour les mieux notés
     new Swiper(swiperSelector, {
         loop: true,
-        loopFillGroupWithBlank: true, // ✅ Remplit les espaces vides pour éviter les bugs
         slidesPerView: 2,
         spaceBetween: 1,
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
+            reverse: false,
         },
         speed: 800,
         navigation: {
@@ -87,20 +63,19 @@ async function createMovieSlider(category, swiperSelector) {
         },
         breakpoints: {
             1024: { slidesPerView: 5 },
-            768: { slidesPerView: 3 },
+            768: { slidesPerView: 1 },
         },
     });
-
 }
 
+// Exécuter la fonction après le chargement du DOM
 document.addEventListener("DOMContentLoaded", async () => {
-
     // 1️⃣ Récupérer et afficher les films
     await displayMoviesInSwiper();
 
     // 2️⃣ Appliquer les styles aux boutons Swiper
-    const prevButton = document.querySelector(".swiper-button-prev-now");
-    const nextButton = document.querySelector(".swiper-button-next-now");
+    const prevButton = document.querySelector(".swiper-button-prev-top-rated");
+    const nextButton = document.querySelector(".swiper-button-next-top-rated");
 
     if (prevButton && nextButton) {
         prevButton.style.fontWeight = "bolder";
@@ -118,5 +93,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (nextButton) nextButton.style.display = "block";
     }
 
-    createMovieSlider("now_playing", ".swiper-now-playing");
+    await createTopRatedMovieSlider();
 });

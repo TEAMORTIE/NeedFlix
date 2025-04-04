@@ -95,22 +95,28 @@ main {
     color: var(--principal);
     font-size: 30px;
 }
-.slider-container-now-playing {
+.slider-container-now-playing,
+.slider-container-top-rated,
+.slider-container-popular,
+.slider-container-upcoming{
     width: 90%;
     margin: 50px auto;
     position: relative;
     height: 430px;
 }
 .slider-title {
-    font-size: 24px;
+    font-size: 32px;
     color: var(--text);
     margin-bottom: 15px;
-    text-align: center;
+    text-align: left;
 }
-.swiper-now-playing {
-     width: 100%;
-     overflow: hidden;
- }
+.swiper-now-playing,
+.swiper-top-rated ,
+.swiper-popular,
+.swiper-upcoming{
+    width: 100%;
+    overflow: hidden;
+}
 .movie-date {
     font-size: 14px;
     opacity: 0.8;
@@ -127,15 +133,21 @@ main {
 .movie-rating{
     color: var(--text);
 }
-.swiper-now-playing .swiper-slide {
+.swiper-now-playing .swiper-slide,
+.swiper-top-rated .swiper-slide,
+.swiper-popular .swiper-slide,
+.swiper-upcoming .swiper-slide {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-.swiper-now-playing img {
+.swiper-now-playing img,
+.swiper-top-rated img,
+.swiper-popular img,
+.swiper-upcoming img{
     width: 100%;
-    max-width: 200px; /* Ajuste la taille de l'affiche */
+    max-width: 200px;
     border-radius: 10px;
 }
 .left-info {
@@ -143,47 +155,94 @@ main {
     flex-direction: column;
     text-align: left;
 }
-.movie-title-now{
+.movie-title-now {
     font-size: 15px;
     color: var(--text);
     font-family: "Kameron", sans-serif;
 }
 .movie-info {
-
     display: flex;
     justify-content: space-between; /* Titre + date à gauche, note à droite */
     align-items: flex-end;
     width: 100%;
     padding: 8px;
-    background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
     color: var(--text);
     font-size: 14px;
     border-radius: 5px;
     font-family: "Kameron", sans-serif;
 }
-.swiper-button-prev-now,
-.swiper-button-next-now {
-    color: var(--principal);
-    font-size: 24px;
-}
 
-/* Responsive : Cacher les sliders sur mobile */
+/* ✅ Afficher les sliders sur mobile */
 @media (max-width: 767px) {
-    .slider-container {
+    .slider-container-now-playing,
+    .slider-container-top-rated,
+    .slider-container-popular,
+    .slider-container-upcoming{
+        display: block; /* Les rendre visibles */
+        width: 95%; /* Éviter que ça colle aux bords */
+        height: auto; /* Adapter à la taille du contenu */
+        margin: 30px auto;
+    }
+    .hero-slider{
         display: none;
     }
-    .slider-container-now-playing {
+    /* ✅ Ajustement de la hauteur des slides */
+    .swiper-slide {
+        height: auto; /* Adapter la hauteur dynamiquement */
+    }
+
+    /* ✅ Adapter la taille des images */
+    .swiper-now-playing img,
+    .swiper-top-rated img,
+    .swiper-popular img,
+    .swiper-updated img{
+        width: 90%; /* Réduire pour éviter les débordements */
+        max-width: 160px;
+        border-radius: 8px;
+    }
+
+    /* ✅ Réduction des titres */
+    .slider-title {
+        font-size: 20px; /* Moins grand sur mobile */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* ✅ Réduire la taille des textes des films */
+    .movie-title-now {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .movie-date,
+    .movie-rating {
+        font-size: 12px;
+    }
+
+    /* ✅ Centrer les infos des films */
+    .movie-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-info {
+        text-align: center;
+    }
+
+    /* ✅ Ajustement des boutons Swiper */
+    .swiper-button-prev,
+    .swiper-button-next {
         display: none;
     }
-}
 
-/* Personnalisation de l'affichage pour les 5 films */
-.swiper-wrapper {
-    display: flex;
-    justify-content: space-between;
-}
+    /* ✅ Espacement pour éviter le chevauchement */
+    .swiper-pagination {
+        bottom: 5px; /* Remonter un peu */
+    }
 
-/* Ajuster les styles de la pagination */
-.swiper-pagination {
-    bottom: 10px;
+    /* ✅ Espacement entre les slides */
+    .swiper-wrapper {
+        justify-content: center;
+    }
 }

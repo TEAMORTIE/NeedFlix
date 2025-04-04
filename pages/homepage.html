@@ -91,10 +91,18 @@
     </div>
 </nav>
 <main>
-    <section>
+    <section class="hero-slider">
         <div class="slider-container">
             <div class="swiper swiper-big">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                    </div>
+                    <div class="swiper-slide">
+                    </div>
+                    <div class="swiper-slide">
+                    </div>
+                    <div class="swiper-slide">
+                    </div>
                     <div class="swiper-slide">
                     </div>
                     <div class="swiper-slide">
@@ -118,12 +126,49 @@
             <div class="swiper-button-next swiper-button-next-now"></div>
         </div>
     </section>
+    <section class="slider-container-top-rated">
+        <h2 class="slider-title">Mieux notés</h2>
+        <div class="swiper swiper-top-rated">
+            <div class="swiper-wrapper">
+                <!-- Les films seront injectés ici via JS -->
+            </div>
+            <div class="swiper-button-prev swiper-button-prev-top-rated"></div>
+            <div class="swiper-button-next swiper-button-next-top-rated"></div>
+        </div>
+    </section>
+    <section class="slider-container-popular">
+        <h2 class="slider-title">Populaire</h2>
+        <div class="swiper swiper-popular">
+            <div class="swiper-wrapper">
+                <!-- Les films seront injectés ici via JS -->
+            </div>
+            <div class="swiper-button-prev swiper-button-prev-popular"></div>
+            <div class="swiper-button-next swiper-button-next-popular"></div>
+        </div>
+    </section>
+    <section class="slider-container-upcoming">
+        <h2 class="slider-title">Bientôt en salle </h2>
+        <div class="swiper swiper-upcoming">
+            <div class="swiper-wrapper">
+                <!-- Les films seront injectés ici via JS -->
+            </div>
+            <div class="swiper-button-prev swiper-button-prev-upcoming"></div>
+            <div class="swiper-button-next swiper-button-next-upcoming"></div>
+        </div>
+    </section>
+    <section>
+        <p>Vous cherchiez peut etres les séries ? </p>
+    </section>
 
 </main>
 <script src="../scripts/navbar.js"></script>
 <script src="../scripts/tmdb.js"></script>
 <script src="../scripts/now-playing.js"></script>
+<script src="../scripts/top-rated.js"></script>
+<script src="../scripts/popular.js"></script>
+<script src="../scripts/upcoming.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 </body>
 </html>
