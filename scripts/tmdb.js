@@ -67,11 +67,12 @@ async function displayMoviesInSwiper() {
         const trailerUrl = await fetchMovieTrailer(movie.id);
 
         slide.innerHTML = `
-            <img src="${imageUrl}" alt="${movie.title}">
+            <a onclick="window.location.href='film.html?id=${movie.id}'"><img src="${imageUrl}" alt="${movie.title}">
             <div class="movie-title">${movie.title}</div>
             <div class="movie-description">${description}</div>
             <a class="BO-button" href="${trailerUrl}" target="_blank">
                 <i class="fa-solid fa-play" style="color: black"></i><p>Bande-Annonce</p>
+            </a>
             </a>
         `;
 

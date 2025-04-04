@@ -29,8 +29,8 @@ async function createTopRatedMovieSlider() {
         const rating = movie.vote_average ? ` ${movie.vote_average.toFixed(1)}/10` : "Pas de note";
 
         slide.innerHTML = `
-            <img src="${imageUrl}" alt="${title}">
-            <div class="movie-info">
+            <img onclick="window.location.href='film.html?id=${movie.id}'" src="${imageUrl}" alt="${title}">
+            <div onclick="window.location.href='film.html?id=${movie.id}'" class="movie-info">
                 <div class="left-info-rated">
                     <p class="movie-title-now">${title}</p>
                     <p class="movie-date">${releaseDate}</p>
