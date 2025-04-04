@@ -10,7 +10,12 @@
 main {
   padding: 20px;
 }
-
+h2 {
+  margin-top: 3em;
+  padding-bottom: 0.2em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--principal);
+}
 /* Conteneur du slider */
 .slider-container {
   width: 100%;
@@ -109,7 +114,6 @@ p {
 .slider-title {
   font-size: 32px;
   color: var(--text);
-  margin-bottom: 15px;
   text-align: left;
 }
 .swiper-now-playing,
@@ -222,6 +226,15 @@ a {
   border-radius: 10px;
   width: 300px;
   z-index: 100000;
+}
+.highrated {
+  color: green;
+}
+.lowrated {
+  color: red;
+}
+.mediumrated {
+  color: var(--principal);
 }
 /* ✅ Afficher les sliders sur mobile */
 @media (max-width: 767px) {

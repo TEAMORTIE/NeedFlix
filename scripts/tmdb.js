@@ -86,7 +86,6 @@ async function displayMoviesInSwiper() {
             <div class="movie-title">${movie.title}</div>
 
             <div class="movie-description">${description}</div>
-            <div class="movie-rank">${movie.ranked}</div>
             <a class="BO-button" href="${trailerUrl}" target="_blank">
                 <i class="fa-solid fa-play" style="color: black"></i><p>Bande-Annonce</p>
             </a>
