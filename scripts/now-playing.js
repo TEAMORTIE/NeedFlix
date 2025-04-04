@@ -44,8 +44,8 @@ async function createMovieSlider(category, swiperSelector) {
         const rating = movie.vote_average ? ` ${movie.vote_average.toFixed(1)}/10` : "Pas de note";
 
         slide.innerHTML = `
-            <img src="${imageUrl}" alt="${title}">
-            <div class="movie-info">
+            <img onclick="window.location.href='film.html?id=${movie.id}'" src="${imageUrl}" alt="${title}">
+            <div onclick="window.location.href='film.html?id=${movie.id}'" class="movie-info">
                 <div class="left-info">
                     <p class="movie-title-now">${title}</p>
                     <p class="movie-date">${releaseDate}</p>
@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (prevButton && nextButton) {
         prevButton.style.fontWeight = "bolder";
         prevButton.style.color = "rgba(255, 149, 0, 1)";
-
 
         nextButton.style.fontWeight = "bolder";
         nextButton.style.color = "rgba(255, 149, 0, 1)";
