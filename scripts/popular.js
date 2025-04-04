@@ -1,6 +1,4 @@
-/**
- * 🎬 Génère un slider Swiper pour les films populaires.
- */
+
 async function createPopularMovieSlider() {
     const category = "popular"; // Catégorie TMDB
     const swiperSelector = ".swiper-popular"; // Sélecteur du slider
@@ -63,7 +61,7 @@ async function createPopularMovieSlider() {
         },
         breakpoints: {
             1024: { slidesPerView: 5 },
-            768: { slidesPerView: 1 },
+            768: { slidesPerView: 3 },
         },
     });
 }

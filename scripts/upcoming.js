@@ -1,6 +1,4 @@
-/**
- * 🎬 Génère un slider Swiper pour les films populaires.
- */
+
 async function createUpcomingMovieSlider() {
     const category = "upcoming"; // Catégorie TMDB
     const swiperSelector = ".swiper-upcoming"; // Sélecteur du slider

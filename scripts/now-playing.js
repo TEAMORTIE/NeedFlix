@@ -1,10 +1,4 @@
 
-/**
- * 🔄 Fonction pour récupérer les films depuis TMDB.
- * @param {string} category - Catégorie de films ("popular", "now_playing").
- * @param {number} limit - Nombre max de films à récupérer.
- * @returns {Promise<Array>} - Liste des films récupérés.
- */
 async function fetchMovies(category, limit = 10) {
 
     try {
@@ -20,11 +14,7 @@ async function fetchMovies(category, limit = 10) {
     }
 }
 
-/**
- * 🎬 Génère un slider Swiper avec les films récupérés.
- * @param {string} category - Catégorie des films.
- * @param {string} swiperSelector - Sélecteur CSS du slider.
- */
+
 async function createMovieSlider(category, swiperSelector) {
 
     const movies = await fetchMovies(category, 10);

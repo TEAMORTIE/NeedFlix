@@ -1,6 +1,4 @@
-/**
- * 🎬 Génère un slider Swiper pour les films les mieux notés.
- */
+
 async function createTopRatedMovieSlider() {
     const category = "top_rated"; // Catégorie TMDB
     const swiperSelector = ".swiper-top-rated"; // Sélecteur du slider
@@ -63,7 +61,7 @@ async function createTopRatedMovieSlider() {
         },
         breakpoints: {
             1024: { slidesPerView: 5 },
-            768: { slidesPerView: 1 },
+            768: { slidesPerView: 3 },
         },
     });
 }

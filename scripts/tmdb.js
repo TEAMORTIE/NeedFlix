@@ -2,10 +2,7 @@ const API_KEY = "85a66825bd1a4015709c7f5b4a5cd488"; // ⚠️ Clé à sécuriser
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original"; // URL des affiches de films
 
-/**
- * 🔄 Fonction pour récupérer les films populaires depuis TMDB.
- * @returns {Promise<Array>} - Liste des films populaires (max 10).
- */
+
 async function fetchPopularMovies() {
     try {
         const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=fr-FR&page=1`);
@@ -21,9 +18,26 @@ async function fetchPopularMovies() {
     }
 }
 
-/**
- * 🎬 Affiche les films récupérés dans le Swiper.
- */
+async function fetchMovieTrailer(movieId) {
+    try {
+        const response = await fetch(`${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}&language=fr-FR`);
+
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+        const data = await response.json();
+        const trailer = data.results.find(video => video.type === "Trailer"); // Cherche une vidéo de type "Trailer"
+
+        if (trailer) {
+            return `https://www.youtube.com/watch?v=${trailer.key}`; // Lien vers la bande-annonce sur YouTube
+        } else {
+            return "#"; // Si aucune bande-annonce n'est trouvée
+        }
+    } catch (error) {
+        console.error("❌ Erreur lors de la récupération de la bande-annonce :", error);
+        return "#"; // Lien par défaut si une erreur se produit
+    }
+}
+
 async function displayMoviesInSwiper() {
     const movies = await fetchPopularMovies();
     const swiperWrapper = document.querySelector(".swiper-wrapper");
@@ -41,8 +55,7 @@ async function displayMoviesInSwiper() {
         return;
     }
 
-    movies.forEach((movie, index) => {
-
+    for (const movie of movies) {
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
 
@@ -50,16 +63,20 @@ async function displayMoviesInSwiper() {
         const imageUrl = movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : "images/placeholder.jpg";
         const description = movie.overview ? movie.overview.slice(0, 100) + "..." : "Aucune description disponible.";
 
+        // Récupérer l'URL de la bande-annonce pour chaque film
+        const trailerUrl = await fetchMovieTrailer(movie.id);
+
         slide.innerHTML = `
             <img src="${imageUrl}" alt="${movie.title}">
             <div class="movie-title">${movie.title}</div>
             <div class="movie-description">${description}</div>
-            <a class="BO-button" href=""><i class="fa-solid fa-play" style="color: black"></i><p>Bande-Annonce</p></a>
+            <a class="BO-button" href="${trailerUrl}" target="_blank">
+                <i class="fa-solid fa-play" style="color: black"></i><p>Bande-Annonce</p>
+            </a>
         `;
 
         swiperWrapper.appendChild(slide);
-    });
-
+    }
 
     // Initialiser Swiper après avoir ajouté les films
     setTimeout(() => {
@@ -82,25 +99,5 @@ async function displayMoviesInSwiper() {
             spaceBetween: 10, // ✅ Espacement entre les slides
         });
     }, 100);
-
 }
 
-// 🏁 Exécuter tout le script après le chargement du DOM
-document.addEventListener("DOMContentLoaded", async () => {
-
-    // 1️⃣ Récupérer et afficher les films
-    await displayMoviesInSwiper();
-
-    // 2️⃣ Appliquer les styles aux boutons Swiper
-    const prevButton = document.querySelector(".swiper-button-prev-now");
-    const nextButton = document.querySelector(".swiper-button-next-now");
-
-    if (prevButton && nextButton) {
-        prevButton.style.fontWeight = "bolder";
-        prevButton.style.color = "rgba(255, 149, 0, 1)";
-
-        nextButton.style.fontWeight = "bolder";
-        nextButton.style.color = "rgba(255, 149, 0, 1)";
-    }
-
-});

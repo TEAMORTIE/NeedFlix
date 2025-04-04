@@ -78,6 +78,7 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 15px;
+    border-radius: 5px;
     text-decoration: none;
     background: var(--principal);
     padding: 5px 15px;
@@ -164,14 +165,38 @@ main {
     display: flex;
     justify-content: space-between; /* Titre + date à gauche, note à droite */
     align-items: flex-end;
-    width: 100%;
+    width: 90%;
     padding: 8px;
     color: var(--text);
     font-size: 14px;
     border-radius: 5px;
     font-family: "Kameron", sans-serif;
 }
+.redirect-bottom{
+    display: flex;
+    color: var(--text);
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+}
+.redirect-bottom p, a {
+    font-family: "Paytone One", sans-serif;
+    color: var(--text);
+    text-decoration: none;
+}
+.redirect-bottom a {
+    background-color: var(--principal);
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: black;
+    width: fit-content;
+    margin: auto;
+    font-size: 24px;
+}
+.redirect-bottom p {
+    font-size: 32px;
 
+}
 /* ✅ Afficher les sliders sur mobile */
 @media (max-width: 767px) {
     .slider-container-now-playing,
