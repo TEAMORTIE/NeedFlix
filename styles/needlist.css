@@ -1,0 +1,22 @@
+.movie img {
+  width: 250px;
+  height: 400px;
+  object-fit: cover;
+}
+.movie {
+  cursor: pointer;
+  width: 250px;
+  font-size: 16px;
+  font-family: "kameron", sans-serif;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+  gap: 1em;
+}
+.coeur {
+  cursor: pointer;
+  color: red;
+  font-size: 25px;
+}
