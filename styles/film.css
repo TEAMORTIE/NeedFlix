@@ -219,16 +219,17 @@ fa-arrow-right .fa-arrow-left {
 .notification {
   position: fixed;
   border-bottom-right-radius: 10px;
+  transition: all 0.3s ease-in-out;
 
   border-bottom-left-radius: 10px;
-  top: 0;
+  top: -10%;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--principal);
   font-family: kameron;
   color: black;
   padding: 10px 20px;
-  font-size: 40px;
+  font-size: 24px;
 }
 .notification i {
   color: black;

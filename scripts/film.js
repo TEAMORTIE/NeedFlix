@@ -169,7 +169,11 @@ function needlist() {
 
   // Vérifier si le film est déjà dans la liste
   if (list.some((item) => item.id === movieId)) {
-    showNotification("Ce film est déjà dans votre liste !");
+    showNotification("Film Supprimé de votre liste!");
+    // Supprimer le film de la liste
+    list = list.filter((item) => item.id !== movieId);
+    localStorage.setItem("needlist", JSON.stringify(list));
+
     return;
   }
   // Ajouter le film à la liste
@@ -184,9 +188,12 @@ function showNotification(message) {
   notification.className = "notification";
   notification.innerHTML = `<i class="fa-solid fa-heart"></i>` + message;
   document.body.appendChild(notification);
+  setTimeout(() => {
+    notification.style.top = 0 + "%";
+  }, 10); // Légère temporisation pour permettre l'animation d'apparition
 
   setTimeout(() => {
-    notification.style.opacity = 0;
+    notification.style.top = -10 + "%";
     setTimeout(() => notification.remove(), 300); // Retirer après l'animation de fondu
   }, 2000);
 }
