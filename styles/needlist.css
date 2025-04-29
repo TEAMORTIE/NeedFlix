@@ -1,0 +1,45 @@
+.movie img {
+  width: 250px;
+  height: 400px;
+  object-fit: cover;
+}
+.movie {
+  cursor: pointer;
+  width: 250px;
+  font-size: 16px;
+  font-family: "kameron", sans-serif;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+  gap: 1em;
+}
+.coeur {
+  cursor: pointer;
+  color: red;
+  font-size: 25px;
+}
+.logo-img{
+  fill: var(--text);
+}
+#themeToggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--principal);
+  color: var(--background);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+}
