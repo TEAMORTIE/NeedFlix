@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar">
   <div class="div-logo-nav">
-    <a href="#">
+    <a href="homepage.html">
       <?xml version="1.0" standalone="no"?>
       <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
       "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
@@ -22,7 +22,7 @@
            width="994.000000pt" height="251.000000pt" viewBox="0 0 994.000000 251.000000"
            preserveAspectRatio="xMidYMid meet">
         <g transform="translate(0.000000,251.000000) scale(0.100000,-0.100000)"
-           fill="white" stroke="none">
+            stroke="none">
           <path d="M1685 2224 c-104 -106 -178 -279 -200 -465 -6 -51 -10 -57 -48 -81
     -157 -98 -310 -146 -492 -154 l-120 -6 -56 54 c-113 107 -248 167 -396 175
     -146 9 -175 -9 -111 -68 116 -108 302 -190 467 -206 l63 -6 36 -56 c48 -75
@@ -83,10 +83,10 @@
 
   <div class="nav-links">
     <a href="../pages/recherche.html"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></a>
-    <a href="#">Les films</a>
+    <a href="homepage.html">Les films</a>
     <a href="#">Les séries</a>
     <a href="acteur.html">Les acteurs</a>
-    <a href="#">NeedList</a>
+    <a href="needlist.html">NeedList</a>
   </div>
 </nav>
 <main>
@@ -141,6 +141,7 @@
       <div class="swiper-button-next swiper-button-next-popular-series"></div>
     </div>
   </section>
+
 
   <section class="slider-container-upcoming-series">
     <h2 class="slider-title">Prochaines séries</h2>
@@ -208,8 +209,8 @@ c117 -179 233 -456 281 -671 18 -79 44 -307 52 -465 l6 -105 -57 -60 c-162
       </svg>
     </div>
     <div class="menu_footer">
-      <a href="">FILMS</a><a href="">SÉRIES</a><a href="">ACTEURS</a
-    ><a href="">NEEDLIST</a><a href="../pages/recherche.html">RECHERCHE</a>
+      <a href="homepage.html">FILMS</a><a href="#">SÉRIES</a><a href="acteur.html">ACTEURS</a
+    ><a href="needlist.html">NEEDLIST</a><a href="../pages/recherche.html">RECHERCHE</a>
     </div>
     <p id="location">Need For School - Avenue de Caen - 76120 Rouen</p>
     <p id="tel">06 95 43 54 59</p>
@@ -224,12 +225,16 @@ c117 -179 233 -456 281 -671 18 -79 44 -307 52 -465 l6 -105 -57 -60 c-162
       <a href="">CRÉATION WEB</a>
     </div>
   </div>
+  <button id="themeToggle" aria-label="Changer le thème">🌓</button>
+
 </footer>
 <script src="../scripts/navbar.js"></script>
 <script src="../scripts/top-slider-series.js"></script>
 <script src="../scripts/series-top-rated.js"></script>
 <script src="../scripts/series-popular.js"></script>
+<script src="../scripts/series-upcoming.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="../scripts/dark-light.js"></script>
 
 </body>
 </html>

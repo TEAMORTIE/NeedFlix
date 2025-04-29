@@ -1,6 +1,6 @@
-async function createPopularSeriesSlider() {
-    const category = "tv/popular"; // Catégorie TMDB pour séries populaires
-    const swiperSelector = ".swiper-popular-series"; // Sélecteur du slider
+async function createUpcomingSeriesSlider() {
+    const category = "tv/on_the_air"; // Prochaines séries (en cours ou à venir)
+    const swiperSelector = ".swiper-upcoming-series"; // Sélecteur du slider
 
     const series = await fetchMovies(category, 10);
     const swiperWrapper = document.querySelector(`${swiperSelector} .swiper-wrapper`);
@@ -77,10 +77,10 @@ async function createPopularSeriesSlider() {
 
 // À appeler dans DOMContentLoaded
 document.addEventListener("DOMContentLoaded", async () => {
-    await createPopularSeriesSlider();
+    await createUpcomingSeriesSlider();
 
-    const prevButton = document.querySelector(".swiper-button-prev-popular-series");
-    const nextButton = document.querySelector(".swiper-button-next-popular-series");
+    const prevButton = document.querySelector(".swiper-button-prev-upcoming-series");
+    const nextButton = document.querySelector(".swiper-button-next-upcoming-series");
 
     if (prevButton && nextButton) {
         prevButton.style.fontWeight = "bolder";

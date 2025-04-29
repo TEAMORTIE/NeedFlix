@@ -51,8 +51,8 @@ async function createTopRatedSerieslider() {
         const rating = serie.vote_average ? ` ${serie.vote_average.toFixed(1)}/10` : "Pas de note";
 
         slide.innerHTML = `
-            <img onclick="window.location.href='serie.html?id=${serie.id}'" src="${imageUrl}" alt="${title}">
-            <div onclick="window.location.href='serie.html?id=${serie.id}'" class="serie-info">
+            <img onclick="window.location.href='serie-info.html?id=${serie.id}'" src="${imageUrl}" alt="${title}">
+            <div onclick="window.location.href='serie-info.html?id=${serie.id}'" class="serie-info">
                 <div class="left-info-rated">
                     <p class="serie-title">${title}</p>
                     <p class="serie-date">${releaseDate}</p>

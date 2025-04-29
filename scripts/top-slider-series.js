@@ -78,7 +78,7 @@ async function displaySeriesInSwiper() {
         const trailerUrl = await fetchSeriesTrailer(series.id);
 
         slide.innerHTML = `
-            <a onclick="window.location.href='serie.html?id=${series.id}'"><img src="${imageUrl}" alt="${series.name}">
+            <a onclick="window.location.href='serie-info.html?id=${series.id}'"><img src="${imageUrl}" alt="${series.name}">
             <div class="serie-title">${series.name}</div>
             <div class="serie-description">${description}</div>
             <a class="BO-button" href="${trailerUrl}" target="_blank">
