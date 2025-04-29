@@ -1,11 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&family=Paytone+One&display=swap");
 
-:root {
-  --background: rgba(18, 18, 17, 1);
+:root[theme="dark"] {
+  --background: rgba(18, 18, 17, 1); /* dark par défaut */
   --principal: rgba(255, 149, 0, 1);
   --secondaire: rgba(249, 240, 230, 1);
   --text: rgba(249, 240, 230, 1);
 }
+
+:root[theme="light"] {
+  --background: rgba(249, 240, 230, 1);
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(18, 18, 17, 1);
+  --text: rgba(18, 18, 17, 1);
+}
+
 
 main {
   padding: 20px;
@@ -53,7 +61,7 @@ h2 {
   position: absolute;
   top: 20px;
   left: 400px;
-  color: var(--text);
+  color: white;
   font-size: 45px;
   font-weight: bold;
   margin: 30px 0 0 30px;
@@ -65,7 +73,7 @@ h2 {
   position: absolute;
   top: 25%;
   left: 420px;
-  color: var(--text);
+  color: white;
   padding: 8px 12px;
   font-size: 24px;
   max-width: 45%;
@@ -235,6 +243,29 @@ a {
 }
 .mediumrated {
   color: var(--principal);
+}
+.logo-img{
+  fill: var(--text);
+}
+#themeToggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--principal);
+  color: var(--background);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
 }
 /* ✅ Afficher les sliders sur mobile */
 @media (max-width: 767px) {
