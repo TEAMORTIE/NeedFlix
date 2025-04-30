@@ -26,16 +26,15 @@ body {
   box-sizing: border-box;
 }
 
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 10px 30px;
   background-color: var(--background);
   max-width: 100%;
   margin: auto;
-  font-family: "Paytone One";
+  font-family: "kameron", sans-serif;
 }
 
 .div-logo-nav {
