@@ -29,7 +29,6 @@
       >
         <g
           transform="translate(0.000000,251.000000) scale(0.100000,-0.100000)"
-          fill="#fff"
           stroke="none"
         >
           <path
@@ -347,15 +346,8 @@ c117 -179 233 -456 281 -671 18 -79 44 -307 52 -465 l6 -105 -57 -60 c-162
         </div>
       </div>
     </footer>
-    <script>
-      if (localStorage.length > 0) {
-        cookies = localStorage.getItem("cookie");
-        if (cookies.length > 0) {
-          window.location.href = "homepage.html";
-        } else {
-          localStorage.clear();
-        }
-      }
-    </script>
+    <button id="themeToggle" aria-label="Changer le thème">🌓</button>
+
   </body>
+<script src="../scripts/dark-light.js"></script>
 </html>
