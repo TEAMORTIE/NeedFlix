@@ -9,7 +9,7 @@
   font-size: 16px;
   font-family: "kameron", sans-serif;
 }
-main {
+#section_film {
   display: flex;
   flex-wrap: wrap;
   padding: 1em;
@@ -20,7 +20,7 @@ main {
   color: red;
   font-size: 25px;
 }
-.logo-img{
+.logo-img {
   fill: var(--text);
 }
 #themeToggle {
