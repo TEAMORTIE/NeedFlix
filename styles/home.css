@@ -11,9 +11,8 @@
   --background: rgba(249, 240, 230, 1);
   --principal: rgba(255, 149, 0, 1);
   --secondaire: rgba(18, 18, 17, 1);
-  --text: rgba(18, 18, 17, 1);
+  --text: rgba(18, 18, 17, 1); /* light par défaut */
 }
-
 
 main {
   padding: 0 20px;
@@ -244,7 +243,7 @@ p {
 .mediumrated {
   color: var(--principal);
 }
-.logo-img{
+.logo-img {
   fill: var(--text);
 }
 #themeToggle {
