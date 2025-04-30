@@ -8,7 +8,7 @@
 }
 
 main {
-  padding: 20px;
+  padding: 0 20px;
 }
 h2 {
   margin-top: 3em;
@@ -187,10 +187,10 @@ p {
   padding-top: 40px;
 }
 .redirect-bottom p,
-a {
-  font-family: "Paytone One", sans-serif;
+.redirect-bottom a {
   color: var(--text);
   text-decoration: none;
+  font-family: "paytone one", sans-serif;
 }
 .redirect-bottom a {
   background-color: var(--principal);
