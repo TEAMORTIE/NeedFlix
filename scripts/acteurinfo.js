@@ -89,7 +89,7 @@ async function afficheracteur(actorId) {
 
                       return `
                       <div class="film2">
-                        <img src="${posterUrl}" alt="${movie.title}" >
+                      <img style="cursor:pointer" onclick="window.location.href='film.html?id=${movie.id}'" src="${posterUrl}" alt="${movie.title}" >
                         <p>${movie.title}</p>
                       </div>
                     `;
