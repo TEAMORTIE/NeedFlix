@@ -24,7 +24,7 @@ const displayMovies = async () => {
             <i class="fa-solid fa-heart coeur"></i>
 
       `;
-      document.getElementById("main").appendChild(movieElement);
+      document.getElementById("section_film").appendChild(movieElement);
 
       // Gestion du bouton Supprimer
       movieElement.querySelector(".coeur").addEventListener("click", () => {

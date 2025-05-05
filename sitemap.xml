@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://needflix.fr/index.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/homepage.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/connexion.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/inscription.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/film.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/series.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/acteur.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/acteurinfo.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/serie-info.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/needlist.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/recherche.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/mention.html</loc>
+  </url>
+  <url>
+    <loc>https://needflix.fr/politique.html</loc>
+  </url>
+
+</urlset>

@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /connexion.html
+Disallow: /inscription.html
+Disallow: /admin/
+Disallow: /private/
+
+Allow: /
+
+Sitemap: https://needflix.fr/sitemap.xml

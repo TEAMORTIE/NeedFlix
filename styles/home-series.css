@@ -1,315 +1,335 @@
 @import url("https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&family=Paytone+One&display=swap");
 
 :root[theme="dark"] {
-    --background: rgba(18, 18, 17, 1); /* dark par défaut */
-    --principal: rgba(255, 149, 0, 1);
-    --secondaire: rgba(249, 240, 230, 1);
-    --text: rgba(249, 240, 230, 1);
+  --background: rgba(18, 18, 17, 1); /* dark par défaut */
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(249, 240, 230, 1);
+  --text: rgba(249, 240, 230, 1);
 }
 
 :root[theme="light"] {
-    --background: rgba(249, 240, 230, 1);
-    --principal: rgba(255, 149, 0, 1);
-    --secondaire: rgba(18, 18, 17, 1);
-    --text: rgba(18, 18, 17, 1);
+  --background: rgba(249, 240, 230, 1);
+  --principal: rgba(255, 149, 0, 1);
+  --secondaire: rgba(18, 18, 17, 1);
+  --text: rgba(18, 18, 17, 1);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--principal);
+  border-radius: 10px;
+}
 main {
-    padding: 20px;
+  padding: 20px;
 }
 
 /* Conteneur du slider */
 .slider-container {
-    width: 100%;
-    height: 80vh; /* Réduction de la hauteur */
-    max-height: 600px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 15px;
-    position: relative;
+  width: 100%;
+  height: 80vh; /* Réduction de la hauteur */
+  max-height: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
 }
 
 /* Style des slides */
 .swiper-slide {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Dimensions du slider */
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Affichage des images */
 .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Titre des séries avec position relative */
 .serie-title {
-    font-size: 15px;
-    color: var(--text);
-    font-family: "Kameron", sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  font-family: "Kameron", sans-serif;
 }
 
 /* Description des séries */
 .serie-description {
-    background: rgba(255, 255, 255, 0.55);
-    color: black;
-    padding: 8px 12px;
-    font-size: 24px;
-    max-width: 45%;
-    border-radius: 5px;
-    font-family: "Kameron", sans-serif;
-    position: relative;
-    z-index: 1;
+  background: rgba(255, 255, 255, 0.55);
+  color: black;
+  padding: 8px 12px;
+  font-size: 24px;
+  max-width: 45%;
+  border-radius: 5px;
+  font-family: "Kameron", sans-serif;
+  position: relative;
+  z-index: 1;
 }
 
 /* Bouton Bande-annonce */
 .BO-button {
-    position: absolute;
-    bottom: 35px;
-    right: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    background: var(--principal);
-    padding: 5px 15px;
+  position: absolute;
+  bottom: 35px;
+  right: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  background: var(--principal);
+  padding: 5px 15px;
 }
 
-.BO-button a, p {
-    color: black;
-    font-family: "Kameron", sans-serif;
-    font-weight: bold;
+.BO-button a,
+p {
+  color: black;
+  font-family: "Kameron", sans-serif;
+  font-weight: bold;
 }
 
 /* Pagination et navigation du swiper */
 .swiper-button-prev,
 .swiper-button-next {
-    color: var(--principal);
-    font-size: 30px;
+  color: var(--principal);
+  font-size: 30px;
 }
 
+.swiper-button-prev {
+  left: 0px !important;
+  font-weight: 500 !important;
+}
+.swiper-button-next {
+  right: 0px !important;
+  font-weight: bold !important;
+}
 .slider-container-airing-today,
 .slider-container-top-rated-series,
 .slider-container-popular-series,
 .slider-container-upcoming-series {
-    width: 90%;
-    margin: 50px auto;
-    position: relative;
-    height: 430px;
+  width: 90%;
+  margin: 50px auto;
+  position: relative;
+  height: 430px;
 }
 
 .slider-title {
-    font-size: 32px;
-    color: var(--text);
-    margin-bottom: 15px;
-    text-align: left;
+  font-size: 32px;
+  color: var(--text);
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .swiper-airing-today,
 .swiper-top-rated-series,
 .swiper-popular-series,
 .swiper-upcoming-series {
-    width: 100%;
-    overflow: hidden;
-    cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .serie-date {
-    font-size: 14px;
-    opacity: 0.8;
-    color: var(--text);
-    font-family: "Kameron", sans-serif;
+  font-size: 14px;
+  opacity: 0.8;
+  color: var(--text);
+  font-family: "Kameron", sans-serif;
 }
 
 .right-info {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: left;
-    font-family: "Kameron", sans-serif;
-    color: var(--text);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  font-family: "Kameron", sans-serif;
+  color: var(--text);
 }
 
 .serie-rating {
-    color: var(--text);
+  color: var(--text);
 }
 
 .swiper-airing-today .swiper-slide,
 .swiper-top-rated-series .swiper-slide,
 .swiper-popular-series .swiper-slide,
 .swiper-upcoming-series .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .swiper-airing-today img,
 .swiper-top-rated-series img,
 .swiper-popular-series img,
 .swiper-upcoming-series img {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 10px;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
 }
 
 .left-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .serie-info {
-    display: flex;
-    justify-content: space-between; /* Titre + date à gauche, note à droite */
-    align-items: flex-end;
-    width: 90%;
-    padding: 8px;
-    color: var(--text);
-    font-size: 14px;
-    border-radius: 5px;
-    font-family: "Kameron", sans-serif;
+  display: flex;
+  justify-content: space-between; /* Titre + date à gauche, note à droite */
+  align-items: flex-end;
+  width: 90%;
+  padding: 8px;
+  color: var(--text);
+  font-size: 14px;
+  border-radius: 5px;
+  font-family: "Kameron", sans-serif;
 }
 
 .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px; /* Conserver un coin arrondi pour l'image */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Conserver un coin arrondi pour l'image */
 }
 
 .redirect-bottom {
-    display: flex;
-    color: var(--text);
-    flex-direction: column;
-    text-align: center;
-    padding-top: 40px;
+  display: flex;
+  color: var(--text);
+  flex-direction: column;
+  text-align: center;
+  padding-top: 40px;
 }
 
-.redirect-bottom p, a {
-    font-family: "Paytone One", sans-serif;
-    color: var(--text);
-    text-decoration: none;
+.redirect-bottom p,
+a {
+  font-family: "Paytone One", sans-serif;
+  color: var(--text);
+  text-decoration: none;
 }
 
 .redirect-bottom a {
-    background-color: var(--principal);
-    padding: 6px 12px;
-    border-radius: 5px;
-    color: black;
-    width: fit-content;
-    margin: auto;
-    font-size: 24px;
+  background-color: var(--principal);
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: black;
+  width: fit-content;
+  margin: auto;
+  font-size: 24px;
 }
 
 .redirect-bottom p {
-    font-size: 32px;
+  font-size: 32px;
 }
-.logo-img{
-    fill: var(--text);
+.logo-img {
+  fill: var(--text);
 }
 #themeToggle {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: var(--principal);
-    color: var(--background);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--principal);
+  color: var(--background);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 #themeToggle:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 /* ✅ Afficher les sliders sur mobile */
 @media (max-width: 767px) {
-    .slider-container-airing-today,
-    .slider-container-top-rated-series,
-    .slider-container-popular-series,
-    .slider-container-upcoming-series {
-        display: block; /* Les rendre visibles */
-        width: 95%; /* Éviter que ça colle aux bords */
-        height: auto; /* Adapter à la taille du contenu */
-        margin: 30px auto;
-    }
+  .slider-container-airing-today,
+  .slider-container-top-rated-series,
+  .slider-container-popular-series,
+  .slider-container-upcoming-series {
+    display: block; /* Les rendre visibles */
+    width: 95%; /* Éviter que ça colle aux bords */
+    height: auto; /* Adapter à la taille du contenu */
+    margin: 30px auto;
+  }
 
-    .hero-slider {
-        display: none;
-    }
+  .hero-slider {
+    display: none;
+  }
 
-    /* ✅ Ajustement de la hauteur des slides */
-    .swiper-slide {
-        height: auto; /* Adapter la hauteur dynamiquement */
-    }
+  /* ✅ Ajustement de la hauteur des slides */
+  .swiper-slide {
+    height: auto; /* Adapter la hauteur dynamiquement */
+  }
 
-    /* ✅ Adapter la taille des images */
-    .swiper-airing-today img,
-    .swiper-top-rated-series img,
-    .swiper-popular-series img,
-    .swiper-upcoming-series img {
-        width: 90%; /* Réduire pour éviter les débordements */
-        max-width: 160px;
-        border-radius: 8px;
-    }
+  /* ✅ Adapter la taille des images */
+  .swiper-airing-today img,
+  .swiper-top-rated-series img,
+  .swiper-popular-series img,
+  .swiper-upcoming-series img {
+    width: 90%; /* Réduire pour éviter les débordements */
+    max-width: 160px;
+    border-radius: 8px;
+  }
 
-    /* ✅ Réduction des titres */
-    .slider-title {
-        font-size: 20px; /* Moins grand sur mobile */
-        text-align: center;
-        margin-bottom: 10px;
-    }
+  /* ✅ Réduction des titres */
+  .slider-title {
+    font-size: 20px; /* Moins grand sur mobile */
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-    /* ✅ Réduire la taille des textes des séries */
-    .serie-title-now {
-        font-size: 13px;
-        text-align: center;
-    }
+  /* ✅ Réduire la taille des textes des séries */
+  .serie-title-now {
+    font-size: 13px;
+    text-align: center;
+  }
 
-    .serie-date,
-    .serie-rating {
-        font-size: 12px;
-    }
+  .serie-date,
+  .serie-rating {
+    font-size: 12px;
+  }
 
-    /* ✅ Centrer les infos des séries */
-    .serie-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  /* ✅ Centrer les infos des séries */
+  .serie-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .left-info {
-        text-align: center;
-    }
+  .left-info {
+    text-align: center;
+  }
 
-    /* ✅ Ajustement des boutons Swiper */
-    .swiper-button-prev,
-    .swiper-button-next {
-        display: none;
-    }
+  /* ✅ Ajustement des boutons Swiper */
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 
-    /* ✅ Espacement pour éviter le chevauchement */
-    .swiper-pagination {
-        bottom: 5px; /* Remonter un peu */
-    }
+  /* ✅ Espacement pour éviter le chevauchement */
+  .swiper-pagination {
+    bottom: 5px; /* Remonter un peu */
+  }
 
-    /* ✅ Espacement entre les slides */
-    .swiper-wrapper {
-        justify-content: center;
-    }
+  /* ✅ Espacement entre les slides */
+  .swiper-wrapper {
+    justify-content: center;
+  }
 }
