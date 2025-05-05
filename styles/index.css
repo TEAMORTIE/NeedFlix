@@ -213,14 +213,6 @@ footer {
   margin-right: 15px;
   font-size: 17px;
 }
-#location::before {
-  content: "\f124";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 20px;
-  color: var(--text);
-  margin-right: 15px;
-}
 #location:hover {
   color: var(--principal);
 }
