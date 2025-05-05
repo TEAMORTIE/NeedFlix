@@ -2,6 +2,8 @@
 
 :root[theme="dark"] {
   --background: rgba(18, 18, 17, 1); /* dark par défaut */
+  --background1: rgba(18, 18, 17, 0.8);
+  --background2: rgba(18, 18, 17, 0.5);
   --principal: rgba(255, 149, 0, 1);
   --secondaire: rgba(249, 240, 230, 1);
   --text: rgba(249, 240, 230, 1);
@@ -9,6 +11,9 @@
 
 :root[theme="light"] {
   --background: rgba(249, 240, 230, 1);
+  --background1: rgba(249, 240, 230, 0.7);
+  --background2: rgba(249, 240, 230, 0.1);
+
   --principal: rgba(255, 149, 0, 1);
   --secondaire: rgba(18, 18, 17, 1);
   --text: rgba(18, 18, 17, 1);
@@ -40,7 +45,7 @@ body {
 .titre {
   font-family: "Paytone One", sans-serif;
   font-weight: 400;
-  color: var(--text);
+  color: white;
 }
 .text {
   font-family: "Kameron", serif;
@@ -185,9 +190,9 @@ h2 {
   height: 100%;
   background: linear-gradient(
     to left,
-    rgba(18, 18, 17, 1),
-    rgba(18, 18, 17, 0.9),
-    rgba(18, 18, 17, 0.5)
+    var(--background),
+    var(--background1),
+    var(--background2)
   );
   pointer-events: none; /* Permet aux interactions de passer à travers */
 }
@@ -201,9 +206,9 @@ h2 {
   height: 100%;
   background: linear-gradient(
     to right,
-    rgba(18, 18, 17, 1),
-    rgba(18, 18, 17, 0.8),
-    rgba(18, 18, 17, 0.5)
+    var(--background),
+    var(--background1),
+    var(--background2)
   );
   pointer-events: none; /* Permet aux interactions de passer à travers */
 }
