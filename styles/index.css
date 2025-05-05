@@ -13,7 +13,17 @@
   --text: rgba(18, 18, 17, 1);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: var(--principal);
+  border-radius: 10px;
+}
 * {
   box-sizing: border-box;
   color: var(--text);
@@ -309,4 +319,3 @@ footer {
 #themeToggle:hover {
   transform: scale(1.1);
 }
-

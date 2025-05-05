@@ -87,10 +87,10 @@ async function displaySeriesInSwiper() {
 
     slide.innerHTML = `
       <a onclick="window.location.href='serie-info.html?id=${series.id}'">
-        <img class="fond" src="${imageUrl}" alt="${series.name}">
+        <img class="fond" src="${imageUrl}" alt="${series.title}">
         <div class="movie-image">
           <img src="${IMAGE_BASE_URL + series.poster_path}" alt="${
-      series.name
+      series.title
     }">
         </div>
         <div class="movie-title">${series.name}</div>
@@ -98,8 +98,7 @@ async function displaySeriesInSwiper() {
         <a class="BO-button" href="${trailerUrl}" target="_blank">
           <i class="fa-solid fa-play" style="color: black"></i><p>Bande-Annonce</p>
         </a>
-      </a>
-    `;
+      </a>`;
 
     swiperWrapper.appendChild(slide);
   }

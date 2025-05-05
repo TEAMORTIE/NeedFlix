@@ -3,6 +3,17 @@
   height: 400px;
   object-fit: cover;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--principal);
+  border-radius: 10px;
+}
 .movie {
   cursor: pointer;
   width: 250px;
@@ -10,10 +21,12 @@
   font-family: "kameron", sans-serif;
 }
 #section_film {
+  margin: 0 3em;
+  justify-content: start;
   display: flex;
   flex-wrap: wrap;
   padding: 1em;
-  gap: 1em;
+  gap: 2em;
 }
 .coeur {
   cursor: pointer;
