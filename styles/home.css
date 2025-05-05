@@ -11,10 +11,20 @@
   --background: rgba(249, 240, 230, 1);
   --principal: rgba(255, 149, 0, 1);
   --secondaire: rgba(18, 18, 17, 1);
-  --text: rgba(18, 18, 17, 1);
+  --text: rgba(18, 18, 17, 1); /* light par défaut */
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: var(--principal);
+  border-radius: 10px;
+}
 main {
   padding: 0 20px;
 }
@@ -67,7 +77,6 @@ h2 {
   margin: 30px 0 0 30px;
   font-family: "Kameron", sans-serif;
 }
-
 /* Description des films */
 .movie-description {
   position: absolute;
@@ -151,7 +160,10 @@ p {
 .swiper-now-playing .swiper-slide,
 .swiper-top-rated .swiper-slide,
 .swiper-popular .swiper-slide,
-.swiper-upcoming .swiper-slide {
+.swiper-upcoming .swiper-slide,
+.swiper-top-rated-series .swiper-slide,
+.swiper-popular-series .swiper-slide,
+.swiper-upcoming-series .swiper-slide {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -244,7 +256,7 @@ p {
 .mediumrated {
   color: var(--principal);
 }
-.logo-img{
+.logo-img {
   fill: var(--text);
 }
 #themeToggle {
@@ -263,9 +275,102 @@ p {
   z-index: 999;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 #themeToggle:hover {
   transform: scale(1.1);
+}
+/* Pagination et navigation du swiper */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--principal) !important;
+  font-size: 30px;
+}
+.swiper-button-prev {
+  left: 0px !important;
+  font-weight: 500 !important;
+}
+.swiper-button-next {
+  right: 0px !important;
+  font-weight: 500 !important;
+}
+.slider-container-airing-today,
+.slider-container-top-rated-series,
+.slider-container-popular-series,
+.slider-container-upcoming-series {
+  width: 90%;
+  margin: 50px auto;
+  position: relative;
+  height: 430px;
+}
+
+.slider-title {
+  font-size: 32px;
+  color: var(--text);
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.swiper-airing-today,
+.swiper-top-rated-series,
+.swiper-popular-series,
+.swiper-upcoming-series {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.serie-date {
+  font-size: 14px;
+  opacity: 0.8;
+  color: var(--text);
+  font-family: "Kameron", sans-serif;
+}
+
+.right-info {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  font-family: "Kameron", sans-serif;
+  color: var(--text);
+}
+
+.swiper-airing-today .swiper-slide,
+.swiper-top-rated-series .swiper-slide,
+.swiper-popular-series .swiper-slide,
+.swiper-upcoming-series .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.swiper-airing-today img,
+.swiper-top-rated-series img,
+.swiper-popular-series img,
+.swiper-upcoming-series img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.left-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.serie-info {
+  display: flex;
+  justify-content: space-between; /* Titre + date à gauche, note à droite */
+  align-items: flex-end;
+  width: 90%;
+  padding: 8px;
+  color: var(--text);
+  font-size: 14px;
+  border-radius: 5px;
+  font-family: "Kameron", sans-serif;
+}
+.serie-title {
+  color: var(--text);
 }
 /* ✅ Afficher les sliders sur mobile */
 @media (max-width: 767px) {

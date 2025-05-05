@@ -3,18 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/acteur.css" />
-    <link rel="stylesheet" href="/styles/index.css" />
+    <title>Plan du site | Needflix</title>
+    <link rel="stylesheet" href="../styles/index.css" />
     <link
       rel="shortcut icon"
       href="/images/logo-icon.svg"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <title>Acteurs Populaires</title>
+    <script
+      src="https://kit.fontawesome.com/your-kit-id.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Remplace par ton kit Font Awesome si besoin -->
+    <style>
+      :root[theme="dark"] {
+        --background: rgba(18, 18, 17, 1); /* dark par défaut */
+        --principal: rgba(255, 149, 0, 1);
+        --secondaire: rgba(249, 240, 230, 1);
+        --text: rgba(249, 240, 230, 1);
+      }
+
+      :root[theme="light"] {
+        --background: rgba(249, 240, 230, 1);
+        --principal: rgba(255, 149, 0, 1);
+        --secondaire: rgba(18, 18, 17, 1);
+        --text: rgba(18, 18, 17, 1); /* light par défaut */
+      }
+      body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 80px auto;
+        padding: 2rem;
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      }
+
+      h1 {
+        color: var(--principal);
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        border-bottom: 2px solid var(--principal);
+        padding-bottom: 0.5rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 1.2rem;
+        font-size: 1.2rem;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      i {
+        margin-right: 0.5rem;
+        color: #f4f4f4;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -134,91 +197,62 @@ c-61 0 -77 -3 -72 -12z"
         <a href="needlist.html">NeedList</a>
       </div>
     </nav>
-    <main id="main">
-      <h1>Acteurs Populaires</h1>
-      <div id="actors-container"></div>
-      <div id="fleche">
-        <button id="precedent-button">
-          <i class="fa-solid fa-arrow-left black"></i>
-        </button>
-        <div id="page"></div>
-        <button id="next-button">
-          <i class="fa-solid fa-arrow-right black"></i>
-        </button>
-      </div>
-      <footer>
-        <div id="footerhaut">
-          <img src="/images/black.jpg" alt="" />
-        </div>
-        <div id="footerbas">
-          <div id="logofooter">
-            <?xml version="1.0" standalone="no"?>
-            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-            <svg
-              version="1.0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="500.000000pt"
-              height="500.000000pt"
-              viewBox="0 0 500.000000 500.000000"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <g
-                transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
-                stroke="none"
-              >
-                <path
-                  d="M3420 4479 c-79 -47 -205 -216 -289 -385 -83 -169 -137 -351 -166
--560 -9 -58 -19 -113 -24 -122 -31 -57 -243 -177 -450 -257 -192 -73 -337
--101 -624 -120 l-219 -15 -99 92 c-268 249 -506 352 -849 364 -160 7 -216 0
--234 -28 -20 -32 64 -121 212 -223 234 -161 546 -273 812 -292 l86 -6 46 -71
-c117 -179 233 -456 281 -671 18 -79 44 -307 52 -465 l6 -105 -57 -60 c-162
--172 -220 -253 -293 -406 -76 -160 -131 -398 -131 -566 0 -80 23 -136 57 -141
-56 -8 244 236 355 461 67 136 129 352 153 534 8 57 20 112 27 120 40 50 316
-194 490 257 153 56 412 103 609 113 162 8 187 3 235 -48 66 -70 220 -193 301
--241 191 -113 448 -188 648 -188 104 0 155 21 155 63 0 29 -55 103 -103 140
--19 15 -41 32 -49 39 -31 30 -139 98 -213 136 -192 97 -427 171 -641 201 -79
-12 -95 24 -163 131 -113 176 -193 379 -242 615 -25 124 -49 339 -49 447 0 109
-11 135 94 227 251 274 384 596 375 906 -2 63 -9 118 -14 123 -22 21 -51 21
--85 1z m-10 -218 c0 -55 -25 -181 -51 -255 -30 -85 -118 -270 -162 -338 -41
--65 -105 -138 -119 -138 -26 0 64 340 128 487 25 56 109 195 150 251 35 45 54
-42 54 -7z m-2465 -926 c119 -35 213 -76 300 -131 83 -52 175 -129 175 -146 0
--27 -182 18 -360 90 -112 45 -333 158 -354 181 -10 11 -15 25 -11 31 11 17
-153 3 250 -25z m1988 -92 c3 -5 10 -75 17 -158 28 -356 75 -528 234 -860 42
--87 76 -161 76 -165 0 -8 -44 -16 -150 -26 -354 -33 -538 -84 -885 -249 -180
--86 -161 -85 -169 -7 -3 37 -10 119 -15 182 -23 282 -67 437 -213 739 -48 102
--85 188 -80 193 8 8 94 21 253 38 97 11 253 36 314 51 136 34 478 181 565 243
-38 27 46 30 53 19z m766 -1365 c216 -56 449 -168 584 -281 26 -22 46 -41 44
--43 -7 -8 -240 38 -311 61 -151 49 -315 144 -426 246 l-55 51 45 -7 c25 -4 78
--16 119 -27z m-1799 -625 c-50 -202 -90 -297 -201 -478 -58 -95 -95 -142 -105
--132 -12 12 26 225 57 320 52 160 140 317 227 406 60 60 62 47 22 -116z"
-                />
-              </g>
-            </svg>
-          </div>
-          <div class="menu_footer">
-            <a href="homepage.html">FILMS</a><a href="series.html">SÉRIES</a
-            ><a href="acteur.html">ACTEURS</a
-            ><a href="needlist.html">NEEDLIST</a
-            ><a href="recherche.html">RECHERCHE</a>
-          </div>
-          <p id="location">Need For School - Avenue de Caen - 76120 Rouen</p>
-          <p id="tel">06 95 43 54 59</p>
-          <div class="lignefooter"></div>
-          <div id="menubas">
-            <a href="mention.html">MENTION LÉGALES </a>
-            <div class="bordure"></div>
-            <a href="politique.html">POLITIQUE DE CONFIDENTIALITÉ</a>
-            <div class="bordure"></div>
-            <a href="sitemap.html">SITEMAP</a>
-            <div class="bordure"></div>
-            <a href="creation.html">CRÉATION WEB</a>
-          </div>
-        </div>
-        <button id="themeToggle" aria-label="Changer le thème">🌓</button>
-      </footer>
-      <script src="/scripts/acteur.js"></script>
-      <script src="../scripts/navbar.js"></script>
-      <script src="../scripts/dark-light.js"></script>
-    </main>
+    <!-- Tu peux ici inclure ton header/navbar si tu utilises un include -->
+
+    <div class="container">
+      <h1><i class="fa-solid fa-sitemap"></i> Plan du site</h1>
+      <ul>
+        <li>
+          <i class="fa-solid fa-house"></i><a href="index.html">Accueil</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-film"></i
+          ><a href="homepage.html">Page principale</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-right-to-bracket"></i
+          ><a href="connexion.html">Connexion</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-user-plus"></i
+          ><a href="inscription.html">Inscription</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-clapperboard"></i><a href="film.html">Films</a>
+        </li>
+        <li><i class="fa-solid fa-tv"></i><a href="series.html">Séries</a></li>
+        <li>
+          <i class="fa-solid fa-user"></i><a href="acteur.html">Acteurs</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-info"></i
+          ><a href="acteurinfo.html">Infos acteur</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-info"></i
+          ><a href="serie-info.html">Infos série</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-heart"></i><a href="needlist.html">NeedList</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-magnifying-glass"></i
+          ><a href="recherche.html">Recherche</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-scale-balanced"></i
+          ><a href="mention.html">Mentions légales</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-shield-halved"></i
+          ><a href="politique.html">Politique de confidentialité</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-code"></i
+          ><a href="creation.html">Création du site</a>
+        </li>
+      </ul>
+    </div>
   </body>
+  <script src="/scripts/dark-light.js"></script>
 </html>

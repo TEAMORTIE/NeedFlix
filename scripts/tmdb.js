@@ -6,7 +6,7 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 async function fetchMovies(category, limit = 10) {
   try {
     const response = await fetch(
-        `${BASE_URL}/movie/${category}?api_key=${API_KEY}&language=fr-FR&page=1`
+      `${BASE_URL}/movie/${category}?api_key=${API_KEY}&language=fr-FR&page=1`
     );
     if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
     const data = await response.json();
@@ -20,7 +20,7 @@ async function fetchMovies(category, limit = 10) {
 async function fetchMovieTrailer(movieId) {
   try {
     const response = await fetch(
-        `${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}&language=fr-FR`
+      `${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}&language=fr-FR`
     );
     if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
     const data = await response.json();
@@ -40,11 +40,11 @@ async function displayMainPopularMovies() {
 
   for (const movie of movies) {
     const imageUrl = movie.backdrop_path
-        ? `${IMAGE_BASE_URL}${movie.backdrop_path}`
-        : "images/placeholder.jpg";
+      ? `${IMAGE_BASE_URL}${movie.backdrop_path}`
+      : "images/placeholder.jpg";
     const description = movie.overview
-        ? movie.overview.slice(0, 500) + "..."
-        : "Aucune description disponible.";
+      ? movie.overview.slice(0, 500) + "..."
+      : "Aucune description disponible.";
     const trailerUrl = await fetchMovieTrailer(movie.id);
 
     const slide = document.createElement("div");
@@ -86,18 +86,27 @@ async function displayMainPopularMovies() {
 
 async function createMovieSlider(category, swiperClass, limit = 10) {
   const movies = await fetchMovies(category, limit);
-  const swiperWrapper = document.querySelector(`${swiperClass} .swiper-wrapper`);
+  const swiperWrapper = document.querySelector(
+    `${swiperClass} .swiper-wrapper`
+  );
   if (!swiperWrapper) return;
   swiperWrapper.innerHTML = "";
 
   for (const movie of movies) {
     const imageUrl = movie.poster_path
-        ? `${IMAGE_BASE_URL}${movie.poster_path}`
-        : "images/placeholder.jpg";
+      ? `${IMAGE_BASE_URL}${movie.poster_path}`
+      : "images/placeholder.jpg";
     const title = movie.title || "Titre inconnu";
     const releaseDate = movie.release_date || "Date inconnue";
-    const rating = movie.vote_average ? `${movie.vote_average.toFixed(1)}/10` : "Pas de note";
-    const valeur = movie.vote_average >= 7 ? "highrated" : movie.vote_average >= 5 ? "mediumrated" : "lowrated";
+    const rating = movie.vote_average
+      ? `${movie.vote_average.toFixed(1)}/10`
+      : "Pas de note";
+    const valeur =
+      movie.vote_average >= 7
+        ? "highrated"
+        : movie.vote_average >= 5
+        ? "mediumrated"
+        : "lowrated";
 
     const slide = document.createElement("div");
     slide.classList.add("swiper-slide");

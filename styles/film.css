@@ -213,7 +213,7 @@ fa-arrow-right .fa-arrow-left {
 .btntrailerdiv {
   margin-top: 10%;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   align-items: center;
 }
 .notification {
@@ -235,7 +235,7 @@ fa-arrow-right .fa-arrow-left {
   color: black;
   margin-right: 1em;
 }
-.logo-img{
+.logo-img {
   fill: var(--text);
 }
 #themeToggle {

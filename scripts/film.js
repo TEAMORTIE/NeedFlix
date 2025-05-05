@@ -95,11 +95,13 @@ async function afficherFilm(movieId) {
           .map(
             (actor) => `
               <div class="film2">
-                <img src="${
-                  actor.profile_path
-                    ? IMAGE_BASE_URL + actor.profile_path
-                    : "https://placehold.co/200x300"
-                }" alt="${actor.name}">
+                <img style='cursor:pointer;' onclick="window.location.href='acteurinfo.html?id=${
+                  actor.id
+                }'" src="${
+              actor.profile_path
+                ? IMAGE_BASE_URL + actor.profile_path
+                : "https://placehold.co/200x300"
+            }" alt="${actor.name}">
                 <p>${actor.name}</p>
               </div>
             `
